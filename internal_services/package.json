@@ -1,0 +1,13 @@
+{
+  "name": "internal-services-runner",
+  "version": "1.0.0",
+  "description": "Start all internal services for MediaMonitor concurrently",
+  "main": "start.js",
+  "scripts": {
+    "start": "node start.js",
+    "dev": "node start.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {}
+}

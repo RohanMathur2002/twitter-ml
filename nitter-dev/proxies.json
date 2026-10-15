@@ -1,0 +1,14 @@
+{
+  "proxies": [
+    "http://A06F0374F013D489-residential-country_EG-r_10m-s_E1QxT90SPU:oL05NtCF@gate.nstproxy.io:24125",
+    "http://A06F0374F013D489-residential-country_EG-r_10m-s_3DxySrPFom:oL05NtCF@gate.nstproxy.io:24125",
+    "http://A06F0374F013D489-residential-country_EG-r_10m-s_SWJZEkmZ8B:oL05NtCF@gate.nstproxy.io:24125",
+    "http://A06F0374F013D489-residential-country_EG-r_10m-s_K5DNTQRVu2:oL05NtCF@gate.nstproxy.io:24125",
+    "http://A06F0374F013D489-residential-country_EG-r_10m-s_XzFVpfgAv9:oL05NtCF@gate.nstproxy.io:24125",
+    "http://A06F0374F013D489-residential-country_EG-r_10m-s_RvHDyi2L3z:oL05NtCF@gate.nstproxy.io:24125",
+    "http://A06F0374F013D489-residential-country_EG-r_10m-s_g627gyTTlJ:oL05NtCF@gate.nstproxy.io:24125",
+    "http://A06F0374F013D489-residential-country_EG-r_10m-s_EsqR4JRfxW:oL05NtCF@gate.nstproxy.io:24125",
+    "http://A06F0374F013D489-residential-country_EG-r_10m-s_r8UDgvL97O:oL05NtCF@gate.nstproxy.io:24125",
+    "http://A06F0374F013D489-residential-country_EG-r_10m-s_1O0x9wv5o2:oL05NtCF@gate.nstproxy.io:24125"
+  ]
+}
