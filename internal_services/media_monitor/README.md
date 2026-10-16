@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MediaMonitor Web Application (`media_monitor`)
 
-## Getting Started
+The Next.js 16 / React 19 frontend and orchestration interface for the MediaMonitor platform.
 
-First, run the development server:
+---
 
+## 📌 Quick Links
+
+- **Main Repository README**: [../../README.md](../../README.md)
+- **Comprehensive Setup Guide**: [../../docs/SETUP_GUIDE.md](../../docs/SETUP_GUIDE.md)
+- **Database & SQL Migrations**: [db/README.md](db/README.md)
+
+---
+
+## 🚀 Getting Started
+
+### 1. Install Dependencies
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Configure Environment Variables
+Copy `.env.example` to `.env`:
+```bash
+cp .env.example .env
+```
+Ensure your PostgreSQL credentials and `ML_FASTAPI_URL` are properly set. For private keys (such as `GEMINI_API_KEY`), create a `.env.local` file.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Apply Database Migrations
+```bash
+node run_migrations.js
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Run Development Server
+```bash
+npm run dev
+```
 
-## Learn More
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🏗️ Architecture & Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **App Router (`app/`)**:
+  - `/(routes)/profile` & `/analyse-profile`: Profile deep-dive and timeline analysis.
+  - `/(routes)/tweet` & `/analyse-tweet`: Tweet and thread reconstruction with zero-shot stance detection.
+  - `/(routes)/maps`: Interactive 2D UMAP semantic maps.
+  - `/(routes)/topics` & `/manage-topics`: Topic taxonomy and semantic anchor configuration.
+  - `/(routes)/compare` & `/compare-st`: Cross-model vector embedding comparisons.
+  - `/(routes)/dev`: Twitter cookie session health and quota dashboard.
+- **Pipeline (`pipeline/`)**: Handles timeline pagination, tweet parsing (via Cheerio), DB upserts, and async ML embedding triggers.
+- **Services (`services/`)**: Integration with Nitter scraper (`nitterService.ts`), ML FastAPI bridge (`tweetService.ts`), and Gemini AI.
